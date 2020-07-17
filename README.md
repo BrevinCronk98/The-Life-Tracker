@@ -23,9 +23,17 @@
 | **User can have their own personal page on the app to display their profile information** | User Input:'Click to View Profile' | Output:'Brevin Cronk, 21 years old, 51 goal points, Gig Harbor' |
 
 
-### User can have theyre own personal page to display their information and their lists.
+### User can have their personal page to display their information and their lists.
 * Input: 'Click to view your profile'
 * Output: 'Brevin Cronk, 21 years old, 51 goal points, Gig Harbor'
+
+### User can have their friends own personal page to display their information and their lists.
+* Input: 'Click to view Bobs  profile'
+* Output: 'Bob Rob, 42 years old, 56 goal points, Gig Harbor'
+
+### User can Invite friends to events.
+* Input: 'Invite Bob'
+* Output: 'Bob will be recieving your invitation and we will let you know if he accepts them'
 </details>
 
 <br/>
