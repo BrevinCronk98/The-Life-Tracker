@@ -44,6 +44,14 @@
 
 
 <details>
+<summary> Click to See Capstone Proposal</summary>
+<img src='the-lifetracker/img/ProposalOne.png' widht='28%' height='50%'>
+<img src='the-lifetracker/img/ProposalTwo.png' widht='24%' height='50%'>
+</details>
+
+
+
+<details>
 <summary> Available Scripts</summary>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
