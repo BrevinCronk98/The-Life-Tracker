@@ -5,13 +5,36 @@
 ## The Life Tracker is my Captstone project for Epicodus. In The Life Tracker, uses will be able to add and delete to multiple different types of lists to help manage the users life. Stretch goals for this project consist of allowing the user to use a MapAPI to find local businesses and restuarants nearby, as well as other user events if they are friends with that specific user. In the end, I want this app to be able to manage nearly all aspects of the users life.
 
 # Description
-## The Life Tracker will track and help manage your life and daily activites. You will be able to create grocery lists, to do lists, a goal checklists and more.
+## The Life Tracker will track and help manage your life and daily activites. You will be able to create grocery lists, to do lists, a goal checklists and more. I plan on implementing maps for the user to use, being able to locate events, resturaunts and businesses user the maps. I want to add someform of a friend data base where a user can add friens, and will then be able to message them, add them to events, and see what they share on their feed.
+
+<details>
+<summary> Click to See Specifications</summary>
+
+## Specifications
+
+| Spec | Input | Output |
+| :------------- | :------------- | :------------- |
+| **User Can Create an Account on App** | User Input:'Click Here To Create an Account' | Output: 'Form for account Creation will appear' |
+| **User can sign in on app** | User Input:'Click herer to Sign in!' | Output: 'Signed in Successfully!!' |
+| **User can Add to Their Different Types of Lists** | User Input:'Click here to add an Item to your To Do List | Output: 'Form for item creation will appear'|
+| **User can Look at and Interact with MapAPI** | User Input: 'Click here to take a look at the map! | Output: 'Maps page will load, user can look around the map' |
+| **App Has a HomeScreen** | User Input: 'On startup' | Output: “Title screen” |
+| **User will get points for completing goals, points will be displayed on profile** | User Input:'Congrats! you completed your 5k jog!' | Output: 'User is rewarded with points' |
+| **User can have their own personal page on the app to display their profile information** | User Input:'Click to View Profile' | Output:'Brevin Cronk, 21 years old, 51 goal points, Gig Harbor' |
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### User can have theyre own personal page to display their information and their lists.
+* Input: 'Click to view your profile'
+* Output: 'Brevin Cronk, 21 years old, 51 goal points, Gig Harbor'
+</details>
+
+<br/>
+
 
 <details>
 <summary> Available Scripts</summary>
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
