@@ -39,6 +39,9 @@
 # Component Flow Chart
 <img src='the-lifetracker/img/ToDoListFlow.png' width='35%'>
 
+# Database Chart
+<img src='the-lifetracker/img/DataBaseFlow.png' width='35%'>
+
 
 <details>
 <summary> Available Scripts</summary>
