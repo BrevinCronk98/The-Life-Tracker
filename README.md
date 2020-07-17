@@ -1,6 +1,17 @@
+# The Life Tracker 
+### By Brevin Cronk
+
+# Overview
+## The Life Tracker is my Captstone project for Epicodus. In The Life Tracker, uses will be able to add and delete to multiple different types of lists to help manage the users life. Stretch goals for this project consist of allowing the user to use a MapAPI to find local businesses and restuarants nearby, as well as other user events if they are friends with that specific user. In the end, I want this app to be able to manage nearly all aspects of the users life.
+
+# Description
+## The Life Tracker will track and help manage your life and daily activites. You will be able to create grocery lists, to do lists, a goal checklists and more.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<details>
+<summary> Available Scripts</summary>
 
 In the project directory, you can run:
 
@@ -66,3 +77,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+</details>
