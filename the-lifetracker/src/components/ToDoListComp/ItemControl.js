@@ -14,4 +14,15 @@ class ItemControl extends React.Component {
 			selectedItem: null
 		};
 	}
+
+	componentDidMount() {
+		this.waitTimeUpdateTime = setInterval(() => this.updateItemElapsedWaitTime(), 60000);
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.waitTimeUpdateTime);
+    }
+    
+    
+    handleClick = () =>
 }
