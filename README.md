@@ -36,7 +36,8 @@
 * Output: 'Bob will be recieving your invitation and we will let you know if he accepts them'
 </details>
 
-<br/>
+# Component Flow Chart
+<img src='the-lifetracker/img/LifeFlow.png' width='35%'>
 
 
 <details>
