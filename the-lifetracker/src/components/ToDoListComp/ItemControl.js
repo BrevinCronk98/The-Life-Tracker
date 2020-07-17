@@ -6,6 +6,7 @@ import EditItemForm from './EditItemForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withFirestroe, isLoaded } from 'react-redux-firebase';
+import Item from './Item';
 
 class ItemControl extends React.Component {
 	constructor(props) {
@@ -21,8 +22,20 @@ class ItemControl extends React.Component {
 
 	componentWillUnmount() {
 		clearInterval(this.waitTimeUpdateTime);
-    }
-    
-    
-    handleClick = () =>
+	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		masterItemList: state.masterItemList,
+		formVisibleOnPage: state.formVisibleOnPage
+	};
+};
+
+ItemControl.propTypes = {
+	masterItemList: PropTypes.object
+};
+
+ItemControl = connect(mapStateToProps)(ItemControl);
+
+export default ItemControl;
