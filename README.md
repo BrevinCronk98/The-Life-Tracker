@@ -37,7 +37,7 @@
 </details>
 
 # Component Flow Chart
-<img src='the-lifetracker/img/LifeFlow.png' width='35%'>
+<img src='the-lifetracker/img/ToDoListFlow.png' width='35%'>
 
 
 <details>
