@@ -1,7 +1,7 @@
 import * as c from './../actions/actionTypes';
 
 export default (state = {}, action) => {
-	const { itemName, itemLocation, itemDate, itemTime, itemNotes } = action;
+	const { itemName, itemLocation, itemDate, itemTime, itemNotes, id } = action;
 	switch (action.type) {
 		case c.ADD_ITEM:
 			return Object.assign({}, state, {
@@ -10,7 +10,8 @@ export default (state = {}, action) => {
 					itemLocation: itemLocation,
 					itemDate: itemDate,
 					itemTime: itemTime,
-					itemNotes: itemNotes
+					itemNotes: itemNotes,
+					id: id
 				}
 			});
 		case c.DELETE_ITEM:
