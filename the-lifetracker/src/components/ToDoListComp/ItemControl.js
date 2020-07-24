@@ -49,7 +49,7 @@ class ItemControl extends React.Component {
 		dispatch(action);
 	};
 
-	handleAddingItem = () => {
+	handleAddingItem = (newItem) => {
 		const { dispatch } = this.props;
 		const action = a.toggleForm();
 		dispatch(action);
@@ -63,7 +63,7 @@ class ItemControl extends React.Component {
 			buttonText = 'Return To Your List';
 			buttonFunc = this.handleFormClick;
 		} else {
-			currentlyVisibleState = <ItemList />;
+			currentlyVisibleState = <ItemList itemList={this.props.masterItemList} />;
 			buttonText = 'Add Something';
 			buttonFunc = this.handleFormClick;
 		}
@@ -78,15 +78,12 @@ class ItemControl extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		masterItemList: state.masterItemList,
 		formVisibleOnPage: state.formVisibleOnPage
 	};
 };
 
 ItemControl.propTypes = {
-	masterItemList: PropTypes.object,
-	formVisibleOnPage: PropTypes.bool,
-	selectedItem: PropTypes.object
+	formVisibleOnPage: PropTypes.bool
 };
 
 ItemControl = connect(mapStateToProps)(ItemControl);
