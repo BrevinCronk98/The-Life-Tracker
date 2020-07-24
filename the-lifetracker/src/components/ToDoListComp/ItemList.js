@@ -20,6 +20,7 @@ function ItemList(props) {
 							itemDate={item.itemDate}
 							itemTime={item.itemTime}
 							itemNotes={item.itemNotes}
+							id={item.id}
 						/>
 					);
 				})}

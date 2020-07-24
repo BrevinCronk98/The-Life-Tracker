@@ -5,6 +5,7 @@ function Item(props) {
 	return (
 		<React.Fragment>
 			<div id="itemList">
+				<h3>Item #: {props.id}</h3>
 				<h3>To Do: {props.itemName}</h3>
 				<h3>Location: {props.itemLocation}</h3>
 				<h3>Date: {props.itemDate}</h3>
@@ -20,7 +21,8 @@ Item.propTypes = {
 	itemLocation: PropTypes.string,
 	itemDate: PropTypes.string,
 	itemTime: PropTypes.string,
-	itemNotes: PropTypes.string
+	itemNotes: PropTypes.string,
+	id: PropTypes.string
 };
 
 export default Item;
