@@ -23,11 +23,21 @@ class ItemControl extends React.Component {
 	componentWillUnmount() {
 		clearInterval(this.waitTimeUpdateTime);
 	}
+
+	handleDeletingTicket = (id) => {
+		this.props.firestore.delete({ collection: 'todolist', doc: id });
+		this.setState({ selectedItem: null });
+	};
+
+	render() {
+		return (
+			<React.Fragment>
+				<ItemControl />
+			</React.Fragment>
+		);
+	}
 }
-handleDeletingTicket = (id) => {
-	this.props.firestore.delete({ collection: 'todolist', doc: id });
-	this.setState({ selectedItem: null });
-};
+
 const mapStateToProps = (state) => {
 	return {
 		masterItemList: state.masterItemList,
@@ -36,7 +46,9 @@ const mapStateToProps = (state) => {
 };
 
 ItemControl.propTypes = {
-	masterItemList: PropTypes.object
+	masterItemList: PropTypes.object,
+	formVisibleOnPage: PropTypes.bool,
+	selectedItem: PropTypes.object
 };
 
 ItemControl = connect(mapStateToProps)(ItemControl);

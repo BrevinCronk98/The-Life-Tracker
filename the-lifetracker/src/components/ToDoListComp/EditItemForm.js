@@ -1,6 +1,6 @@
 import React from 'react';
 import ReusableForm from './ReusableForm';
-import { useFirestore } from 'rerct-redux-firebase';
+import { useFirestore } from 'react-redux-firebase';
 
 function EditItemForm(props) {
 	const firestore = useFirestore();
