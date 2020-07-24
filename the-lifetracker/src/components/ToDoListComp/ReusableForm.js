@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function ReusableForm(props) {
 	return (
 		<React.Fragment>
-			<div id="form">
+			<div id="form" onSubmit={props.formSubmissionHandler}>
 				<form>
 					{/* Item Name */}
 					<label id="label" name="itemName">

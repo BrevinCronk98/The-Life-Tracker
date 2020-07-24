@@ -7,7 +7,6 @@ function NewItemForm(props) {
 	const firestore = useFirestore();
 	function addItemtoFirestore(event) {
 		event.preventDefault();
-		props.onNewItemCreation();
 		return firestore.collection('todolist').add({
 			itemName: event.target.itemName.value,
 			itemLocation: event.target.itemLocation.value,

@@ -5,7 +5,7 @@ import ItemDetail from './ItemDetails';
 import EditItemForm from './EditItemForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withFirestroe, isLoaded } from 'react-redux-firebase';
+import { withFirestore, isLoaded } from 'react-redux-firebase';
 import Item from './Item';
 import * as a from './../../actions';
 
@@ -39,17 +39,20 @@ class ItemControl extends React.Component {
 		const action = a.toggleForm();
 		dispatch(action);
 	};
+
+	handleAddingItem = () => {
+		const { dispatch } = this.props;
+		const action = a.toggleForm();
+		dispatch(action);
+	};
 	render() {
 		let currentlyVisibleState = null;
-		if(this.props.formVisibleOnPage) {
-			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem}
+		if (this.props.formVisibleOnPage) {
+			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem} />;
+		} else {
+			return (currentlyVisibleState = <ItemList />);
 		}
-		return (
-			
-			<React.Fragment>
-				<ItemList />
-			</React.Fragment>
-		);
+		return <React.Fragment>{currentlyVisibleState}</React.Fragment>;
 	}
 }
 
@@ -68,4 +71,4 @@ ItemControl.propTypes = {
 
 ItemControl = connect(mapStateToProps)(ItemControl);
 
-export default ItemControl;
+export default withFirestore(ItemControl);
