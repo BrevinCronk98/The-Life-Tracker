@@ -1,19 +1,14 @@
 import * as c from './../actions/actionTypes';
 
 export default (state = {}, action) => {
-	const { itemName, itemLocation, itemDate, itemTime, itemNotes, id } = action;
+	const { formattedWaitTime, id } = action;
 	switch (action.type) {
-		case c.ADD_ITEM:
-			return Object.assign({}, state, {
-				[id]: {
-					itemName: itemName,
-					itemLocation: itemLocation,
-					itemDate: itemDate,
-					itemTime: itemTime,
-					itemNotes: itemNotes,
-					id: id
-				}
+		case c.UPDATE_TIME:
+			const newTicket = Object.assign({}, state[id], { formattedWaitTime });
+			const updatedState = Object.assign({}, state, {
+				[id]: newTicket
 			});
+			return updatedState;
 		case c.DELETE_ITEM:
 			const newState = { ...state };
 			delete newState[id];

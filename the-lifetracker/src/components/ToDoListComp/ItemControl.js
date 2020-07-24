@@ -34,6 +34,15 @@ class ItemControl extends React.Component {
 		this.setState({ selectedItem: null });
 	};
 
+	updateItemElapsedWaitTime = () => {
+		const { dispatch } = this.props;
+		Object.values(this.props.masterItemList).forEach((item) => {
+			const newFormattedWaitTime = item.timeOpen.fromNow(true);
+			const action = a.updateTime(item.id, newFormattedWaitTime);
+			dispatch(action);
+		});
+	};
+
 	handleFormClick = () => {
 		const { dispatch } = this.props;
 		const action = a.toggleForm();

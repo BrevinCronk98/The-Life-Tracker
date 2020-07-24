@@ -12,7 +12,8 @@ function NewItemForm(props) {
 			itemLocation: event.target.itemLocation.value,
 			itemDate: event.target.itemDate.value,
 			itemTime: event.target.itemTime.value,
-			itemNotes: event.target.itemNotes.value
+			itemNotes: event.target.itemNotes.value,
+			TimeOpen: firestore.FieldValue.serverTimestamp()
 		});
 	}
 	return (
