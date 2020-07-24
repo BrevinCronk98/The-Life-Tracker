@@ -29,7 +29,6 @@ function ItemList(props) {
 		return (
 			<React.Fragment>
 				<h3>You Have Nothing In Your list!</h3>
-				<button> Click Here To Add One</button>
 			</React.Fragment>
 		);
 	}
