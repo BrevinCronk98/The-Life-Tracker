@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withFirestroe, isLoaded } from 'react-redux-firebase';
 import Item from './Item';
+import * as a from './../../actions';
 
 class ItemControl extends React.Component {
 	constructor(props) {
@@ -33,9 +34,18 @@ class ItemControl extends React.Component {
 		this.setState({ selectedItem: null });
 	};
 
+	handleFormClick = () => {
+		const { dispatch } = this.props;
+		const action = a.toggleForm();
+		dispatch(action);
+	};
 	render() {
 		let currentlyVisibleState = null;
+		if(this.props.formVisibleOnPage) {
+			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem}
+		}
 		return (
+			
 			<React.Fragment>
 				<ItemList />
 			</React.Fragment>

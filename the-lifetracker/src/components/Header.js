@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header() {
+	let buttonText = null;
 	return (
 		<React.Fragment>
 			<div id="header">
