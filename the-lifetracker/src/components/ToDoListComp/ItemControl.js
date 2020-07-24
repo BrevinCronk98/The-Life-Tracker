@@ -20,6 +20,10 @@ class ItemControl extends React.Component {
 		this.waitTimeUpdateTime = setInterval(() => this.updateItemElapsedWaitTime(), 60000);
 	}
 
+	componentDidUpdate() {
+		console.log('component updated');
+	}
+
 	componentWillUnmount() {
 		clearInterval(this.waitTimeUpdateTime);
 	}
@@ -30,6 +34,7 @@ class ItemControl extends React.Component {
 	};
 
 	render() {
+		let currentlyVisibleState = null;
 		return (
 			<React.Fragment>
 				<ItemList />

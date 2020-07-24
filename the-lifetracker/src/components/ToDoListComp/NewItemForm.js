@@ -1,10 +1,10 @@
 import React from 'react';
 import ReusableForm from './ReusableForm';
-import { useFireStore } from 'react-redux-firebase';
+import { useFirestore } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
 
 function NewItemForm(props) {
-	const firestore = useFireStore();
+	const firestore = useFirestore();
 	function addItemtoFirestore(event) {
 		event.preventDefault();
 		props.onNewItemCreation();
@@ -18,7 +18,7 @@ function NewItemForm(props) {
 	}
 	return (
 		<React.Fragment>
-			<ReusableForm buttonText="Add" formSubmissionHandler={addItemtoFirestore} />;
+			<ReusableForm buttonText="Add" formSubmissionHandler={addItemtoFirestore} />
 		</React.Fragment>
 	);
 }
