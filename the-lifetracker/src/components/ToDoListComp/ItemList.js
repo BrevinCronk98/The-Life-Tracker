@@ -28,7 +28,8 @@ function ItemList(props) {
 	} else {
 		return (
 			<React.Fragment>
-				<h3>Loading...</h3>
+				<h3>You Have Nothing In Your list!</h3>
+				<button> Click Here To Add One</button>
 			</React.Fragment>
 		);
 	}

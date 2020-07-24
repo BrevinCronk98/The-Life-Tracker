@@ -32,7 +32,7 @@ class ItemControl extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<ItemControl />
+				<ItemList />
 			</React.Fragment>
 		);
 	}

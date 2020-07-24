@@ -26,8 +26,9 @@ store.subscribe(() => console.log(store.getState()));
 
 ReactDOM.render(
 	<Provider store={store}>
-		<ReactReduxFirebaseProvider {...rrfProps} />
-		<App />
+		<ReactReduxFirebaseProvider {...rrfProps}>
+			<App />
+		</ReactReduxFirebaseProvider>
 	</Provider>,
 	document.getElementById('root')
 );

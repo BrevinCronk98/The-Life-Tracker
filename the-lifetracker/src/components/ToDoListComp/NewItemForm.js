@@ -1,11 +1,13 @@
 import React from 'react';
 import ReusableForm from './ReusableForm';
 import { useFireStore } from 'react-redux-firebase';
+import PropTypes from 'prop-types';
 
 function NewItemForm(props) {
 	const firestore = useFireStore();
 	function addItemtoFirestore(event) {
 		event.preventDefault();
+		props.onNewItemCreation();
 		return firestore.collection('todolist').add({
 			itemName: event.target.itemName.value,
 			itemLocation: event.target.itemLocation.value,
@@ -14,7 +16,15 @@ function NewItemForm(props) {
 			itemNotes: event.target.itemNotes.value
 		});
 	}
-	return <ReusableForm buttonText="Add" />;
+	return (
+		<React.Fragment>
+			<ReusableForm buttonText="Add" formSubmissionHandler={addItemtoFirestore} />;
+		</React.Fragment>
+	);
 }
+
+NewItemForm.propTypes = {
+	onNewItemCreation: PropTypes.func
+};
 
 export default NewItemForm;
