@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import { withFirestore, isLoaded } from 'react-redux-firebase';
 import Item from './Item';
 import * as a from './../../actions';
+import Button from '@material-ui/core/Button';
 
 class ItemControl extends React.Component {
 	constructor(props) {
@@ -69,8 +70,11 @@ class ItemControl extends React.Component {
 		}
 		return (
 			<React.Fragment>
+				<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
 				{currentlyVisibleState}
-				<button onClick={buttonFunc}>{buttonText}</button>
+				<Button variant="contained" color="primary" onClick={buttonFunc}>
+					{buttonText}
+				</Button>
 			</React.Fragment>
 		);
 	}

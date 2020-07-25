@@ -3,6 +3,7 @@ import Item from './Item';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
+import 'fontsource-roboto';
 
 function ItemList(props) {
 	useFirestoreConnect([ { collection: 'todolist' } ]);

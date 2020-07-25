@@ -1,51 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
-function ReusableForm(props) {
+export default function ReusableForm(props) {
 	return (
 		<React.Fragment>
-			<div id="form" onSubmit={props.formSubmissionHandler}>
-				<form>
-					{/* Item Name */}
-					<label id="label" name="itemName">
-						Enter your To Do Item:
-					</label>
-					<input id="input" type="text" name="itemName" placeholder="Enter your Item!" />
-					<br />
-
-					{/* Item Location */}
-					<label id="label" name="itemLocation">
-						Enter the Location:
-					</label>
-					<input id="input" type="text" name="itemLocation" placeholder="Enter the Location!" />
-					<br />
-
-					{/* Item Date */}
-					<label id="label" name="itemDate">
-						Enter the Date:
-					</label>
-					<input id="input" type="text" name="itemDate" placeholder="Enter the Date!" />
-					<br />
-
-					{/*Item Time  */}
-					<label id="label" name="itemTime">
-						Enter the Time of Day:
-					</label>
-					<input id="input" type="text" name="itemTime" placeholder="Enter the Time of Day!" />
-					<br />
-
-					{/* Item Notes */}
-					<label id="label" name="itemNotes">
-						Enter any Notes you may Have:
-					</label>
-					<input id="input" type="text" name="itemNotes" placeholder="Notes" />
-					<br />
-
-					<button id="ipt-btn" type="submit">
-						{props.buttonText}
-					</button>
-				</form>
-			</div>
+			<Grid container spacing={3}>
+				<Grid item xs={12} sm={6}>
+					<TextField required id="itemName" name="itemName" label="To Do Item:" fullWidth />
+				</Grid>
+				<Grid item xs={12} sm={6}>
+					<TextField required id="itemLocation" name="itemLocation" label="Location:" fullWidth />
+				</Grid>
+				<Grid item xs={12} sm={6}>
+					<TextField required id="itemDate" name="itemDate" label="Date:" fullWidth />
+				</Grid>
+				<Grid item xs={12} sm={6}>
+					<TextField required id="itemTime" name="itemTime" label="Time: " fullWidth />
+				</Grid>
+				<Grid item xs={12} sm={6}>
+					<TextField required id="itemNotes" name="itemNotes" label="Notes: " fullWidth />
+				</Grid>
+			</Grid>
+			<Button id="form-btn" variant="contained" color="primary">
+				{props.buttonText}
+			</Button>
+			<br />
 		</React.Fragment>
 	);
 }
@@ -53,5 +37,3 @@ function ReusableForm(props) {
 ReusableForm.propTypes = {
 	buttonText: PropTypes.string
 };
-
-export default ReusableForm;
