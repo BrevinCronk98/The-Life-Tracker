@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 function ReusableForm(props) {
 	return (
@@ -10,41 +12,71 @@ function ReusableForm(props) {
 				<div id="form">
 					<form onSubmit={props.formSubmissionHandler}>
 						{/* Item Name */}
-						<label id="label" name="itemName">
-							Enter your To Do Item:
-						</label>
-						<input id="input" type="text" name="itemName" placeholder="Enter your Item!" />
-						<br />
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="itemName"
+								variant="outlined"
+								required
+								fullWidth
+								id="itemName"
+								label="To Do Item"
+								autoFocus
+							/>
+						</Grid>
 
 						{/* Item Location */}
-						<label id="label" name="itemLocation">
-							Enter the Location:
-						</label>
-						<input id="input" type="text" name="itemLocation" placeholder="Enter the Location!" />
-						<br />
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="itemLocation"
+								variant="outlined"
+								required
+								fullWidth
+								id="itemLocation"
+								label="Location"
+								autoFocus
+							/>
+						</Grid>
 
 						{/* Item Date */}
-						<label id="label" name="itemDate">
-							Enter the Date:
-						</label>
-						<input id="input" type="text" name="itemDate" placeholder="Enter the Date!" />
-						<br />
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="itemDate"
+								variant="outlined"
+								required
+								fullWidth
+								id="itemDate"
+								label="Date"
+								autoFocus
+							/>
+						</Grid>
 
 						{/*Item Time  */}
-						<label id="label" name="itemTime">
-							Enter the Time of Day:
-						</label>
-						<input id="input" type="text" name="itemTime" placeholder="Enter the Time of Day!" />
-						<br />
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="itemTime"
+								variant="outlined"
+								required
+								fullWidth
+								id="itemTime"
+								label="Time"
+								autoFocus
+							/>
+						</Grid>
 
 						{/* Item Notes */}
-						<label id="label" name="itemNotes">
-							Enter any Notes you may Have:
-						</label>
-						<input id="input" type="text" name="itemNotes" placeholder="Notes" />
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="itemNotes"
+								variant="outlined"
+								required
+								fullWidth
+								id="itemNotes"
+								label="Notes"
+								autoFocus
+							/>
+						</Grid>
 						<br />
-
-						<Button type="submit" variant="contained" color="primary">
+						<Button id="form-btn" type="submit" variant="contained" color="primary">
 							{props.buttonText}
 						</Button>
 					</form>
