@@ -30,7 +30,9 @@ function ItemList(props) {
 	} else {
 		return (
 			<React.Fragment>
-				<h3>You Have Nothing In Your list!</h3>
+				<center>
+					<h3>You Have Nothing In Your list!</h3>
+				</center>
 			</React.Fragment>
 		);
 	}

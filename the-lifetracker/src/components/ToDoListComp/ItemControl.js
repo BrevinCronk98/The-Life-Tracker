@@ -63,9 +63,12 @@ class ItemControl extends React.Component {
 			<React.Fragment>
 				<meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
 				{currentlyVisibleState}
-				<Button variant="contained" color="primary" onClick={buttonFunc}>
-					{buttonText}
-				</Button>
+
+				<center>
+					<Button id="main-btn" variant="contained" color="primary" onClick={buttonFunc}>
+						{buttonText}
+					</Button>
+				</center>
 			</React.Fragment>
 		);
 	}

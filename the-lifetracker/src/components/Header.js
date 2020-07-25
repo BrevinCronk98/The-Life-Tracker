@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 function Header() {
 	let buttonText = null;
 	return (
 		<React.Fragment>
-			<div id="header">
-				<h1>Welcome to Your To Do List!</h1>
-				<h3 id="toDoGreet">Feel free to add to your to do list at any time!</h3>
-				<h3 id="toDoGreet">We want to help you do what you need to do!</h3>
-				<h3>Thank You For Using Life Tracker</h3>
-			</div>
-			<hr />
+			<Container maxWidth="sm" component="main">
+				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+					The To Do List
+				</Typography>
+				<Typography variant="h5" align="center" color="textSecondary" component="p">
+					This is where you can keep try of thing you need to do in your life! Thank you for using the To Do
+					List!.
+				</Typography>
+			</Container>
 		</React.Fragment>
 	);
 }
