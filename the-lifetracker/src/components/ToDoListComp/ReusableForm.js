@@ -16,6 +16,7 @@ function ReusableForm(props) {
 	const classes = useStyles();
 	return (
 		<React.Fragment>
+			<br />
 			<Container component="main" maxWidth="xs">
 				<div id="form">
 					<form onSubmit={props.formSubmissionHandler}>

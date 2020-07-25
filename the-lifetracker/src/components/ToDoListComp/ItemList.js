@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded } from 'react-redux-firebase';
 import 'fontsource-roboto';
+import Typography from '@material-ui/core/Typography';
 
 function ItemList(props) {
 	useFirestoreConnect([ { collection: 'todolist' } ]);
@@ -30,8 +31,11 @@ function ItemList(props) {
 	} else {
 		return (
 			<React.Fragment>
+				<br />
 				<center>
-					<h3>You Have Nothing In Your list!</h3>
+					<Typography component="h4" variant="h5" align="center" color="textPrimary" gutterBottom>
+						You Have Nothing In Your List!!
+					</Typography>
 				</center>
 			</React.Fragment>
 		);
