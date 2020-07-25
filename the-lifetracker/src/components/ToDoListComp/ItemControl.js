@@ -19,7 +19,7 @@ class ItemControl extends React.Component {
 	}
 
 	componentDidMount() {
-		this.waitTimeUpdateTime = setInterval(() => this.updateItemElapsedWaitTime(), 60000);
+		console.log('component mounted');
 	}
 
 	componentDidUpdate() {
@@ -33,15 +33,6 @@ class ItemControl extends React.Component {
 	handleDeletingTicket = (id) => {
 		this.props.firestore.delete({ collection: 'todolist', doc: id });
 		this.setState({ selectedItem: null });
-	};
-
-	updateItemElapsedWaitTime = () => {
-		const { dispatch } = this.props;
-		Object.values(this.props.masterItemList).forEach((item) => {
-			const newFormattedWaitTime = item.timeOpen.fromNow(true);
-			const action = a.updateTime(item.id, newFormattedWaitTime);
-			dispatch(action);
-		});
 	};
 
 	handleFormClick = () => {
