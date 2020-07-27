@@ -10,6 +10,7 @@ function ItemList(props) {
 	useFirestoreConnect([ { collection: 'todolist' } ]);
 
 	const items = useSelector((state) => state.firestore.ordered.items);
+	console.log(items);
 	if (isLoaded(items)) {
 		return (
 			<React.Fragment>
