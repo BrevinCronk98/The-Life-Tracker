@@ -26,17 +26,3 @@ export const getItemsFailure = (error) => ({
 export const requestItems = () => ({
 	type: 'REQUEST_ITEMS'
 });
-
-export const makeApiCall = () => {
-	return (dispatch) => {
-		dispatch(requestItems);
-		return fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
-			.then((response) => response.json())
-			.then((jsonifiedResponse) => {
-				dispatch(getItemsSuccess(jsonifiedResponse.results));
-			})
-			.catch((error) => {
-				dispatch(getItemsFailure(error));
-			});
-	};
-};
