@@ -17,6 +17,9 @@ function Header() {
 				<Button id="signin" href="#" color="primary" variant="outlined">
 					Login
 				</Button>
+				<Button id="signin" href="#" color="primary" variant="outlined">
+					Goal List
+				</Button>
 			</Toolbar>
 			<Container maxWidth="sm" component="main">
 				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
