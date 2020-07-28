@@ -19,4 +19,4 @@ Goal.propTypes = {
 	id: PropTypes.string
 };
 
-export default Item;
+export default Goal;

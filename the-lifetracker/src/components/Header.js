@@ -1,39 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core';
-
-function isGoal() {
-	return (this.props.isGoal = !this.props.isGoal);
-}
+import rootReducer from '../reducers/index';
+import { Link } from 'react-router-dom';
 
 function Header() {
-	let buttonText = null;
+	let HeaderText = null;
 	return (
 		<React.Fragment>
 			<Toolbar>
 				<Typography variant="h6" color="inherit" noWrap>
-					To Do List
+					The Life Tracker
 				</Typography>
-
+				<Button id="signin" href="#" color="primary" variant="outlined">
+					<Link style={{ textDecoration: 'none' }} to="/ToDo">
+						To Do List
+					</Link>
+				</Button>
 				<Button id="signin" href="#" color="primary" variant="outlined">
 					Login
 				</Button>
-				<Button onClick={isGoal()} id="signin" href="#" color="primary" variant="outlined">
-					Goal List
+				<Button id="signin" href="#" color="primary" variant="outlined">
+					<Link style={{ textDecoration: 'none' }} to="/Goals">
+						Goals
+					</Link>
 				</Button>
 			</Toolbar>
-			<Container maxWidth="sm" component="main">
-				<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-					The To Do List
-				</Typography>
-				<Typography variant="h5" align="center" color="textSecondary" component="p">
-					This is where you can keep try of thing you need to do in your life! Thank you for using the To Do
-					List!.
-				</Typography>
-			</Container>
 		</React.Fragment>
 	);
 }

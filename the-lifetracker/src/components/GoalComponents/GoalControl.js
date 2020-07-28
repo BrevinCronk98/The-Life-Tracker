@@ -5,6 +5,8 @@ import { withFirestore, isLoaded } from 'react-redux-firebase';
 import Goal from './Goal';
 import * as a from './../../actions';
 import Button from '@material-ui/core/Button';
+import NewGoalForm from './NewGoalForm';
+import GoalList from './GoalList';
 
 class GoalControl extends React.Component {
 	constructor(props) {
@@ -12,10 +14,6 @@ class GoalControl extends React.Component {
 		this.state = {
 			selectedGoal: null
 		};
-	}
-
-	isGoal() {
-		return (this.props.isGoal = !this.props.isGoal);
 	}
 
 	componentDidMount() {
@@ -50,7 +48,7 @@ class GoalControl extends React.Component {
 		let currentlyVisibleState = null;
 		let buttonText = null;
 		let buttonFunc = null;
-		if (this.props.isGoal) {
+		if (this.props.formVisibleOnPage) {
 			currentlyVisibleState = <NewGoalForm onNewGoalCreation={this.handleAddingGoal} />;
 			buttonText = 'Click Here To See the Rest of Your Goals';
 			buttonFunc = this.handleFormClick;
@@ -76,12 +74,14 @@ class GoalControl extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		formVisibleOnPage: state.formVisibleOnPage
+		formVisibleOnPage: state.formVisibleOnPage,
+		isGoal: state.isGoal
 	};
 };
 
 GoalControl.propTypes = {
-	formVisibleOnPage: PropTypes.bool
+	formVisibleOnPage: PropTypes.bool,
+	isGoal: PropTypes.bool
 };
 
 GoalControl = connect(mapStateToProps)(GoalControl);

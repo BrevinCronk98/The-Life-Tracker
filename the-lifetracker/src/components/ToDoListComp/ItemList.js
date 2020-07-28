@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useFirestoreConnect, isLoaded, useFirestore } from 'react-redux-firebase';
 import 'fontsource-roboto';
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 function ItemList(props) {
 	useFirestoreConnect([ { collection: 'todolist' } ]);
@@ -14,6 +15,18 @@ function ItemList(props) {
 	if (isLoaded(items)) {
 		return (
 			<React.Fragment>
+				<center>
+					<Container maxWidth="sm" component="main">
+						<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+							The To Do List
+						</Typography>
+						<Typography variant="h5" align="center" color="textSecondary" component="p">
+							This is where you can keep try of thing you need to do in your life! Thank you for using the
+							To Do List!.
+						</Typography>
+					</Container>
+				</center>
+
 				<hr />
 				{items.map((item) => {
 					return (
