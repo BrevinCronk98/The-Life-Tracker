@@ -5,6 +5,8 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 const useStyles = makeStyles((theme) => ({
 	mainBtn: {
@@ -89,6 +91,7 @@ function ReusableForm(props) {
 						<br />
 
 						<Button
+							endIcon={<CloudUploadIcon />}
 							className={classes.mainBtn}
 							id="form-btn"
 							type="submit"

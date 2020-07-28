@@ -65,7 +65,13 @@ class ItemControl extends React.Component {
 				{currentlyVisibleState}
 
 				<center>
-					<Button id="main-btn" variant="contained" color="primary" onClick={buttonFunc}>
+					<Button
+						style={{ marginBottom: '8%' }}
+						id="main-btn"
+						variant="contained"
+						color="primary"
+						onClick={buttonFunc}
+					>
 						{buttonText}
 					</Button>
 				</center>

@@ -16,7 +16,7 @@ function ItemList(props) {
 		return (
 			<React.Fragment>
 				<center>
-					<Container maxWidth="sm" component="main">
+					<Container style={{ borderRadius: '15px' }} id="listHeader" maxWidth="sm" component="main">
 						<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
 							The To Do List
 						</Typography>
