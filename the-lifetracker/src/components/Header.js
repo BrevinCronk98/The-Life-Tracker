@@ -5,6 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core';
 
+function isGoal() {
+	return (this.props.isGoal = !this.props.isGoal);
+}
+
 function Header() {
 	let buttonText = null;
 	return (
@@ -17,7 +21,7 @@ function Header() {
 				<Button id="signin" href="#" color="primary" variant="outlined">
 					Login
 				</Button>
-				<Button id="signin" href="#" color="primary" variant="outlined">
+				<Button onClick={isGoal()} id="signin" href="#" color="primary" variant="outlined">
 					Goal List
 				</Button>
 			</Toolbar>

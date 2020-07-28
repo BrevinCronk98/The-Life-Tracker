@@ -14,6 +14,10 @@ class GoalControl extends React.Component {
 		};
 	}
 
+	isGoal() {
+		return (this.props.isGoal = !this.props.isGoal);
+	}
+
 	componentDidMount() {
 		console.log('component mounted');
 	}
@@ -46,7 +50,7 @@ class GoalControl extends React.Component {
 		let currentlyVisibleState = null;
 		let buttonText = null;
 		let buttonFunc = null;
-		if (this.props.formVisibleOnPage) {
+		if (this.props.isGoal) {
 			currentlyVisibleState = <NewGoalForm onNewGoalCreation={this.handleAddingGoal} />;
 			buttonText = 'Click Here To See the Rest of Your Goals';
 			buttonFunc = this.handleFormClick;

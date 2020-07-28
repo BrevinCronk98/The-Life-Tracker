@@ -23,6 +23,6 @@ export const getItemsFailure = (error) => ({
 	error
 });
 
-export const requestItems = () => ({
-	type: 'REQUEST_ITEMS'
+export const toggleSwitch = () => ({
+	type: 'TOGGLE_SWITCH'
 });
