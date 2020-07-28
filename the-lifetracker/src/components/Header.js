@@ -10,59 +10,45 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
 	mainGrid: {
-		margin: theme.spacing(3, 50, 3)
+		margin: theme.spacing(3.5, 3, 4)
 	}
 }));
 
 function Header() {
-	let HeaderText = null;
 	const classes = useStyles();
 	return (
 		<React.Fragment>
 			<center>
-				<Typography variant="h6" color="inherit" noWrap>
+				<Typography variant="h4" color="inherit" noWrap>
 					The Life Tracker
 				</Typography>
 			</center>
 			<br />
-			<Toolbar>
-				<Container>
-					<Grid item xs={1}>
-						<center>
-							<Button
-								className={classes.mainGrid}
-								id="todolist"
-								href="#"
-								color="primary"
-								variant="outlined"
-							>
-								<Link style={{ textDecoration: 'none' }} to="/ToDo">
-									To Do List
-								</Link>
-							</Button>
-						</center>
-					</Grid>
-					<Grid item xs={1}>
-						<Button className={classes.mainGrid} id="signin" href="#" color="primary" variant="outlined">
-							Login
+			<Container maxWidth="sm">
+				<Toolbar>
+					<Grid item xs={4}>
+						<Button margin="5%" id="todolist" href="#" color="primary" variant="outlined">
+							<Link style={{ textDecoration: 'none' }} to="/ToDo">
+								To Do List
+							</Link>
 						</Button>
 					</Grid>
-					<Grid item xs={1}>
-						<Button
-							className={classes.mainGrid}
-							align="center"
-							id="signin"
-							href="#"
-							color="primary"
-							variant="outlined"
-						>
+					<Grid className={classes.mainGrid} item xs={4}>
+						<Button id="signin" href="#" color="primary" variant="outlined">
+							<Link style={{ textDecoration: 'none' }} to="/ToDo">
+								Login
+							</Link>
+						</Button>
+					</Grid>
+					<Grid className={classes.mainGrid} item xs={4}>
+						<Button id="signin" href="#" color="primary" variant="outlined">
 							<Link style={{ textDecoration: 'none' }} to="/Goals">
 								Goals
 							</Link>
 						</Button>
 					</Grid>
-				</Container>
-			</Toolbar>
+				</Toolbar>
+			</Container>
 			<hr />
 		</React.Fragment>
 	);

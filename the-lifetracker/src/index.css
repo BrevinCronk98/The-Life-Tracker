@@ -4,6 +4,9 @@ body {
 		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-image: url("./img/mount-rainier-national-park-live-wallpaper-2560×1080.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 code {
@@ -12,4 +15,7 @@ code {
 
 #signin {
 	float: right;
+}
+
+body {
 }
