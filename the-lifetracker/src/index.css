@@ -18,9 +18,17 @@ code {
 }
 
 #header {
-	background-image: url('./img/Mountains.jpeg');
+	background-image: url('./img/HeaderBack.jpg');
 }
 
 #listHeader {
 	background-image: url('./img/headerpic.jpg');
+}
+
+#header-sub {
+	background-image: url('./img/Plexus.jpg');
+}
+
+#header-text {
+	color: white;
 }

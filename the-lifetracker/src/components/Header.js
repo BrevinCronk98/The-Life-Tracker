@@ -29,9 +29,11 @@ function Header() {
 				<Box borderRadius="20px" id="header">
 					<div>
 						<center>
-							<Typography variant="h4" color="inherit" noWrap>
-								The Life Tracker
-							</Typography>
+							<Container style={{ borderRadius: '15px' }} id="header-sub" maxWidth="xs">
+								<Typography id="header-text" variant="h4" noWrap>
+									The Life Tracker
+								</Typography>
+							</Container>
 						</center>
 						<br />
 						<Container maxWidth="sm">
