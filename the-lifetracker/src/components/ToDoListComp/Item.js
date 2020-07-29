@@ -20,8 +20,17 @@ import PostImgTwelve from '../../img/PostImgTen.jpg';
 import PostImgThirteen from '../../img/PostImgThirteen.jpg';
 import PostImgFourteen from '../../img/PostImgTwelve.webp';
 import CardMedia from '@material-ui/core/CardMedia';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import Hidden from '@material-ui/core/Hidden';
+import { makeStyles } from '@material-ui/core/styles';
 
-let displayImg = () => {};
+const useStyles = makeStyles({
+	card: {
+		display: 'flex'
+	}
+});
 
 function Item(props) {
 	const imgArray = [
@@ -40,42 +49,44 @@ function Item(props) {
 		PostImgThirteen,
 		PostImgFourteen
 	];
-	let currentImg = null;
 
+	const classes = useStyles;
 	let num = Math.floor(Math.random() * imgArray.length);
 	let img = imgArray[num];
 
 	return (
 		<React.Fragment>
-			<Typography align="center">
-				<Container style={{}} maxWidth={'xs'}>
-					<Paper>
-						<Grid style={{ margin: '4%' }} container>
-							<Grid item md={6}>
-								<div id="itemList">
-									<Typography component="h1" variant="h3" color="inherit" gutterBottom>
+			<center>
+				<Grid style={{ float: 'center', margin: '3%' }} item xs={12} md={4}>
+					<CardActionArea component="a" href="#">
+						<Card className={classes.card}>
+							<div>
+								<CardContent>
+									<Typography component="h2" variant="h5">
 										{props.itemName}
 									</Typography>
-
-									<Typography variant="h5" color="inherit" paragraph>
+									<Typography variant="subtitle1" color="textSecondary">
 										{props.itemLocation}
 									</Typography>
-									<Typography variant="h5" color="inherit" paragraph>
+									<Typography variant="subtitle1" paragraph>
 										{props.itemDate}
 									</Typography>
-									<Typography variant="h5" color="inherit" paragraph>
+									<Typography variant="subtitle1" paragraph>
 										{props.itemTime}
 									</Typography>
-									<Typography variant="h5" color="inherit" paragraph>
+									<Typography variant="subtitle1" paragraph>
 										{props.itemNotes}
 									</Typography>
-								</div>
-							</Grid>
-							<img src={img} width="55%" style={{ float: 'right' }} />
-						</Grid>
-					</Paper>
-				</Container>
-			</Typography>
+								</CardContent>
+							</div>
+
+							<Hidden xsDown>
+								<img id="img" src={img} width="45%" style={{ borderRadius: '15px' }} />
+							</Hidden>
+						</Card>
+					</CardActionArea>
+				</Grid>
+			</center>
 		</React.Fragment>
 	);
 }
