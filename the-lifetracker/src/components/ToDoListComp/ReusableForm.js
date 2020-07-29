@@ -33,6 +33,7 @@ function ReusableForm(props) {
 									id="itemName"
 									label="To Do Item"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 
@@ -46,6 +47,7 @@ function ReusableForm(props) {
 									id="itemLocation"
 									label="Location"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 
@@ -59,6 +61,7 @@ function ReusableForm(props) {
 									id="itemDate"
 									label="Date"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 
@@ -72,6 +75,7 @@ function ReusableForm(props) {
 									id="itemTime"
 									label="Time"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 
@@ -85,6 +89,7 @@ function ReusableForm(props) {
 									id="itemNotes"
 									label="Notes"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 						</Grid>
@@ -97,6 +102,7 @@ function ReusableForm(props) {
 							type="submit"
 							variant="contained"
 							color="primary"
+							style={{ backgroundColor: 'lightblue' }}
 						>
 							{props.buttonText}
 						</Button>

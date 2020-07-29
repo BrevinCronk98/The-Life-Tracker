@@ -31,6 +31,7 @@ function ReusableForm(props) {
 									id="itemName"
 									label="What Goal Do You Want To Achieve"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 
@@ -44,6 +45,7 @@ function ReusableForm(props) {
 									id="goalNotes"
 									label="Anything You Need To Bring?"
 									autoFocus
+									style={{ backgroundColor: 'lightblue' }}
 								/>
 							</Grid>
 						</Grid>
