@@ -61,7 +61,7 @@ class ItemControl extends React.Component {
 	};
 
 	handleChangingSelectedItem = (id) => {
-		this.componentWillReceiveProps.firestore.get({ collection: 'todolist', doc: id }).then((item) => {
+		this.props.firestore.get({ collection: 'todolist', doc: id }).then((item) => {
 			const firestoreItem = {
 				itemName: item.get('itemName'),
 				itemLocation: item.get('itemLocation'),
@@ -71,6 +71,7 @@ class ItemControl extends React.Component {
 				id: item.id
 			};
 			this.setState({ selectedItem: firestoreItem });
+			console.log(this.state.selectedItem);
 		});
 	};
 
@@ -90,7 +91,7 @@ class ItemControl extends React.Component {
 		} else if (this.editing) {
 			currentlyVisibleState = <EditItemForm item={this.state.selectedItem} />;
 			buttonFunc = this.handleEditingItemInList;
-		} else if (this.selectedItem != null) {
+		} else if (this.state.selectedItem != null) {
 			currentlyVisibleState = (
 				<ItemDetails
 					item={this.state.selectedItem}
