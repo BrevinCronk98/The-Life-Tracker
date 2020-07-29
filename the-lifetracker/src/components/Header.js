@@ -29,8 +29,8 @@ function Header() {
 				<Box borderRadius="20px" id="header">
 					<div>
 						<center>
-							<Container style={{ borderRadius: '15px' }} id="header-sub" maxWidth="xs">
-								<Typography id="header-text" variant="h4" noWrap>
+							<Container style={{ borderRadius: '15px', marginTop: '2%' }} id="header-sub" maxWidth="xs">
+								<Typography id="header-text" variant="h3" noWrap>
 									The Life Tracker
 								</Typography>
 							</Container>
@@ -47,8 +47,15 @@ function Header() {
 								</Grid>
 								<Grid className={classes.mainGrid} item xs={4}>
 									<Button id="signin" href="#" color="primary" variant="contained">
-										<Link style={{ textDecoration: 'none', color: 'white' }} to="/ToDo">
+										<Link style={{ textDecoration: 'none', color: 'white' }} to="/SignIn">
 											Login
+										</Link>
+									</Button>
+								</Grid>
+								<Grid className={classes.mainGrid} item xs={4}>
+									<Button id="signin" href="#" color="primary" variant="contained">
+										<Link style={{ textDecoration: 'none', color: 'white' }} to="/">
+											Home
 										</Link>
 									</Button>
 								</Grid>
