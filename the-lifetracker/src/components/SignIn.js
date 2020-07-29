@@ -6,10 +6,14 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { FormControl } from '@material-ui/core';
+import Input from '@material-ui/core/Input';
+import { InputLabel } from '@material-ui/core';
 
 function Signin() {
 	function doSignUp(event) {
 		event.preventDefault();
+
 		const email = event.target.email.value;
 		const password = event.target.password.value;
 		firebase
@@ -19,7 +23,7 @@ function Signin() {
 				console.log('Successfully Signed Up');
 			})
 			.catch(function(error) {
-				console.log(error.message);
+				console.log(error.message, 'help');
 			});
 	}
 	return (
@@ -28,22 +32,10 @@ function Signin() {
 				<Typography variant="h2" style={{ textAlign: 'center', marginBottom: '5%' }}>
 					Sign Up
 				</Typography>
-				<Grid container spacing={2}>
-					<form onSubmit={doSignUp}>
+				<form onSubmit={doSignUp}>
+					<Grid container spacing={2}>
 						<Grid item xs={12} sm={6}>
-							<TextField
-								name="username"
-								variant="outlined"
-								required
-								fullWidth
-								id="username"
-								label="Enter a Username"
-								autoFocus
-								style={{ backgroundColor: 'lightblue' }}
-							/>
-						</Grid>
-						<Grid item xs={12} sm={6}>
-							<TextField
+							<InputLabel
 								name="email"
 								variant="outlined"
 								required
@@ -51,40 +43,41 @@ function Signin() {
 								id="email"
 								label="Enter Your Email"
 								autoFocus
-								style={{ backgroundColor: 'lightblue' }}
 							/>
+							<Input style={{ backgroundColor: 'lightblue' }} placeholder="Enter an Email" />
 						</Grid>
 
 						{/* Item Location */}
+
 						<Grid item xs={12} sm={6}>
-							<TextField
+							<InputLabel
 								name="password"
 								variant="outlined"
 								required
 								fullWidth
 								id="password"
-								label="Enter a Password"
+								label="Enter Your Password"
 								autoFocus
-								style={{ backgroundColor: 'lightblue' }}
 							/>
+							<Input style={{ backgroundColor: 'lightblue' }} placeholder="Enter a Password" />
 						</Grid>
-					</form>
-				</Grid>
-				<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
-					<Button
-						type="submit"
-						onSubmit={doSignUp}
-						style={{ backgroundPosition: 'center' }}
-						id="signin"
-						href="#"
-						color="primary"
-						variant="contained"
-					>
-						<Link style={{ textDecoration: 'none', color: 'white' }} to="/HomePage">
-							Sign Up
-						</Link>
-					</Button>
-				</Grid>
+					</Grid>
+
+					<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
+						<Button
+							type="submit"
+							style={{ backgroundPosition: 'center' }}
+							id="signin"
+							href="#"
+							color="primary"
+							variant="contained"
+						>
+							<Link style={{ textDecoration: 'none', color: 'white' }} to="/HomePage">
+								Sign Up
+							</Link>
+						</Button>
+					</Grid>
+				</form>
 			</Container>
 		</React.Fragment>
 	);
