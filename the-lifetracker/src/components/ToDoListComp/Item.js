@@ -5,9 +5,44 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
-import PostImgOne from '../../img/postimg2.jpg';
+import PostImgOne from '../../img/PostImg1.webp';
+import PostImgTwo from '../../img/PostImgOne.jpg';
+import PostImgThree from '../../img/PostImgEight.jpg';
+import PostImgFour from '../../img/PostImgEleven.jpg';
+import PostImgFive from '../../img/PostImgFifteen.jpg';
+import PostImgSix from '../../img/PostImgFive.jpg';
+import PostImgSeven from '../../img/PostImgFour.jpg';
+import PostImgEight from '../../img/PostImgFourteen.jpg';
+import PostImgNine from '../../img/PostImgNine.jpg';
+import PostImgTen from '../../img/PostImgSeven.jpg';
+import PostImgEleven from '../../img/PostImgSix.jpg';
+import PostImgTwelve from '../../img/PostImgTen.jpg';
+import PostImgThirteen from '../../img/PostImgThirteen.jpg';
+import PostImgFourteen from '../../img/PostImgTwelve.webp';
 
-const imgArray = function() {};
+const imgArray = [
+	PostImgOne,
+	PostImgTwo,
+	PostImgThree,
+	PostImgFour,
+	PostImgFive,
+	PostImgSix,
+	PostImgSeven,
+	PostImgEight,
+	PostImgNine,
+	PostImgTen,
+	PostImgEleven,
+	PostImgTwelve,
+	PostImgThirteen,
+	PostImgFourteen
+];
+let currentImg = null;
+let displayImg = () => {
+	for (let i = 0; i < imgArray.length; i++) {
+		console.log(currentImg);
+		return (currentImg = Math.floor(Math.random * imgArray.length));
+	}
+};
 
 function Item(props) {
 	return (
@@ -21,7 +56,7 @@ function Item(props) {
 									<Typography component="h1" variant="h3" color="inherit" gutterBottom>
 										{props.itemName}
 									</Typography>
-									<img src={imgArray} width="20%" />
+
 									<Typography variant="h5" color="inherit" paragraph>
 										{props.itemLocation}
 									</Typography>
@@ -34,6 +69,7 @@ function Item(props) {
 									<Typography variant="h5" color="inherit" paragraph>
 										{props.itemNotes}
 									</Typography>
+									<img src={displayImg} />
 								</div>
 							</Grid>
 						</Grid>
