@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 function ItemDetail(props) {
 	const { item } = props;
@@ -12,6 +13,12 @@ function ItemDetail(props) {
 			<h3>{item.itemDate}</h3>
 			<h3>{item.itemTime}</h3>
 			<h3>{item.itemNotes}</h3>
+			<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+				Delete
+			</Button>
+			<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+				Update
+			</Button>
 		</React.Fragment>
 	);
 }

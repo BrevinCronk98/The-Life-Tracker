@@ -31,12 +31,14 @@ function ItemList(props) {
 				{items.map((item) => {
 					return (
 						<Item
+							whenItemClicked={props.onItemSelection}
 							itemName={item.itemName}
 							itemLocation={item.itemLocation}
 							itemDate={item.itemDate}
 							itemTime={item.itemTime}
 							itemNotes={item.itemNotes}
 							id={item.id}
+							key={item.id}
 						/>
 					);
 				})}

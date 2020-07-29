@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -78,6 +78,7 @@ function Item(props) {
 										{props.itemNotes}
 									</Typography>
 								</CardContent>
+								<Button onClick={() => props.whenItemClicked(props.id)}>View Details</Button>
 							</div>
 
 							<Hidden xsDown>

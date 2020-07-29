@@ -1,7 +1,7 @@
 import React from 'react';
 import NewItemForm from './NewItemForm';
 import ItemList from './ItemList';
-import ItemDetail from './ItemDetails';
+import ItemDetails from './ItemDetails';
 import EditItemForm from './EditItemForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -14,7 +14,8 @@ class ItemControl extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			selectedItem: null
+			selectedItem: null,
+			editing: false
 		};
 	}
 
@@ -35,17 +36,49 @@ class ItemControl extends React.Component {
 		this.setState({ selectedItem: null });
 	};
 
+	handleEditClick = () => {
+		this.setState({ editing: true });
+		console.log(this.state.editing);
+	};
+
 	handleFormClick = () => {
 		const { dispatch } = this.props;
 		const action = a.toggleForm();
 		dispatch(action);
 	};
 
-	handleAddingItem = (newItem) => {
+	handleAddingNewItem = (newItem) => {
 		const { dispatch } = this.props;
 		const action = a.toggleForm();
 		dispatch(action);
 	};
+
+	handleEditingItemInList = () => {
+		this.setState({
+			editing: false,
+			selectedItem: null
+		});
+	};
+
+	handleChangingSelectedItem = (id) => {
+		this.componentWillReceiveProps.firestore.get({ collection: 'todolist', doc: id }).then((item) => {
+			const firestoreItem = {
+				itemName: item.get('itemName'),
+				itemLocation: item.get('itemLocation'),
+				itemDate: item.get('itemDate'),
+				itemTime: item.get('itemTime'),
+				itemNotes: item.get('itemNotes'),
+				id: item.id
+			};
+			this.setState({ selectedItem: firestoreItem });
+		});
+	};
+
+	handleDeletingItem = (id) => {
+		this.props.firrestore.delete({ collection: 'todolist', doc: id });
+		this.setState({ selectedItem: null });
+	};
+
 	render() {
 		let currentlyVisibleState = null;
 		let buttonText = null;
@@ -54,8 +87,21 @@ class ItemControl extends React.Component {
 			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem} />;
 			buttonText = 'Return To Your List';
 			buttonFunc = this.handleFormClick;
+		} else if (this.editing) {
+			currentlyVisibleState = <EditItemForm item={this.state.selectedItem} />;
+			buttonFunc = this.handleEditingItemInList;
+		} else if (this.selectedItem != null) {
+			currentlyVisibleState = (
+				<ItemDetails
+					item={this.state.selectedItem}
+					onClickDelete={this.handleDeletingItem}
+					onClickEdit={this.handleEditClick}
+				/>
+			);
 		} else {
-			currentlyVisibleState = <ItemList itemList={this.props.masterItemList} />;
+			currentlyVisibleState = (
+				<ItemList itemList={this.props.masterItemList} onItemSelection={this.handleChangingSelectedItem} />
+			);
 			buttonText = 'Add Something';
 			buttonFunc = this.handleFormClick;
 		}
