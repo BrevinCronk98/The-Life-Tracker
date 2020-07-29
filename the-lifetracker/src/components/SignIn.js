@@ -7,8 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { FormControl } from '@material-ui/core';
-import Input from '@material-ui/core/Input';
-import { InputLabel } from '@material-ui/core';
 
 function Signin() {
 	function doSignUp(event) {
@@ -35,7 +33,7 @@ function Signin() {
 				<form onSubmit={doSignUp}>
 					<Grid container spacing={2}>
 						<Grid item xs={12} sm={6}>
-							<InputLabel
+							<TextField
 								name="email"
 								variant="outlined"
 								required
@@ -43,29 +41,29 @@ function Signin() {
 								id="email"
 								label="Enter Your Email"
 								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
 							/>
-							<Input style={{ backgroundColor: 'lightblue' }} placeholder="Enter an Email" />
 						</Grid>
 
 						{/* Item Location */}
-
 						<Grid item xs={12} sm={6}>
-							<InputLabel
+							<TextField
 								name="password"
 								variant="outlined"
 								required
 								fullWidth
 								id="password"
-								label="Enter Your Password"
+								label="Enter a Password"
 								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
 							/>
-							<Input style={{ backgroundColor: 'lightblue' }} placeholder="Enter a Password" />
 						</Grid>
 					</Grid>
 
 					<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
 						<Button
 							type="submit"
+							onSubmit={console.log('help')}
 							style={{ backgroundPosition: 'center' }}
 							id="signin"
 							href="#"
