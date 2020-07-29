@@ -19,32 +19,32 @@ import PostImgEleven from '../../img/PostImgSix.jpg';
 import PostImgTwelve from '../../img/PostImgTen.jpg';
 import PostImgThirteen from '../../img/PostImgThirteen.jpg';
 import PostImgFourteen from '../../img/PostImgTwelve.webp';
+import CardMedia from '@material-ui/core/CardMedia';
 
-const imgArray = [
-	PostImgOne,
-	PostImgTwo,
-	PostImgThree,
-	PostImgFour,
-	PostImgFive,
-	PostImgSix,
-	PostImgSeven,
-	PostImgEight,
-	PostImgNine,
-	PostImgTen,
-	PostImgEleven,
-	PostImgTwelve,
-	PostImgThirteen,
-	PostImgFourteen
-];
-let currentImg = null;
-let displayImg = () => {
-	for (let i = 0; i < imgArray.length; i++) {
-		console.log(currentImg);
-		return (currentImg = Math.floor(Math.random * imgArray.length));
-	}
-};
+let displayImg = () => {};
 
 function Item(props) {
+	const imgArray = [
+		PostImgOne,
+		PostImgTwo,
+		PostImgThree,
+		PostImgFour,
+		PostImgFive,
+		PostImgSix,
+		PostImgSeven,
+		PostImgEight,
+		PostImgNine,
+		PostImgTen,
+		PostImgEleven,
+		PostImgTwelve,
+		PostImgThirteen,
+		PostImgFourteen
+	];
+	let currentImg = null;
+
+	let num = Math.floor(Math.random() * imgArray.length);
+	let img = imgArray[num];
+
 	return (
 		<React.Fragment>
 			<Typography align="center">
@@ -69,9 +69,9 @@ function Item(props) {
 									<Typography variant="h5" color="inherit" paragraph>
 										{props.itemNotes}
 									</Typography>
-									<img src={displayImg} />
 								</div>
 							</Grid>
+							<img src={img} width="55%" style={{ float: 'right' }} />
 						</Grid>
 					</Paper>
 				</Container>
