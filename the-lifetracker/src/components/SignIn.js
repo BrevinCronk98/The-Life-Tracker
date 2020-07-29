@@ -66,13 +66,10 @@ function Signin() {
 							onSubmit={console.log('help')}
 							style={{ backgroundPosition: 'center' }}
 							id="signin"
-							href="#"
 							color="primary"
 							variant="contained"
 						>
-							<Link style={{ textDecoration: 'none', color: 'white' }} to="/HomePage">
-								Sign Up
-							</Link>
+							Sign Up
 						</Button>
 					</Grid>
 				</form>
