@@ -29,55 +29,59 @@ function Signin() {
 					Sign Up
 				</Typography>
 				<Grid container spacing={2}>
-					<Grid item xs={12} sm={6}>
-						<TextField
-							name="username"
-							variant="outlined"
-							required
-							fullWidth
-							id="username"
-							label="Enter a Username"
-							autoFocus
-							style={{ backgroundColor: 'lightblue' }}
-						/>
-					</Grid>
-					<Grid item xs={12} sm={6}>
-						<TextField
-							name="email"
-							variant="outlined"
-							required
-							fullWidth
-							id="email"
-							label="Enter Your Email"
-							autoFocus
-							style={{ backgroundColor: 'lightblue' }}
-						/>
-					</Grid>
+					<form onSubmit={doSignUp}>
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="username"
+								variant="outlined"
+								required
+								fullWidth
+								id="username"
+								label="Enter a Username"
+								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
+							/>
+						</Grid>
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="email"
+								variant="outlined"
+								required
+								fullWidth
+								id="email"
+								label="Enter Your Email"
+								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
+							/>
+						</Grid>
 
-					{/* Item Location */}
-					<Grid item xs={12} sm={6}>
-						<TextField
-							name="password"
-							variant="outlined"
-							required
-							fullWidth
-							id="password"
-							label="Enter a Password"
-							autoFocus
-							style={{ backgroundColor: 'lightblue' }}
-						/>
-					</Grid>
+						{/* Item Location */}
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="password"
+								variant="outlined"
+								required
+								fullWidth
+								id="password"
+								label="Enter a Password"
+								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
+							/>
+						</Grid>
+					</form>
 				</Grid>
 				<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
 					<Button
+						type="submit"
+						onSubmit={doSignUp}
 						style={{ backgroundPosition: 'center' }}
 						id="signin"
 						href="#"
 						color="primary"
 						variant="contained"
 					>
-						<Link style={{ textDecoration: 'none', color: 'white' }} to="/Goals">
-							Sign In
+						<Link style={{ textDecoration: 'none', color: 'white' }} to="/HomePage">
+							Sign Up
 						</Link>
 					</Button>
 				</Grid>
