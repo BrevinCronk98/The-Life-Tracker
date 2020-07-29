@@ -57,9 +57,9 @@ function Item(props) {
 	return (
 		<React.Fragment>
 			<center>
-				<Grid style={{ float: 'center', margin: '3%' }} item xs={12} md={4}>
+				<Grid style={{ float: 'center', margin: '3%', borderRadius: '25px' }} item xs={12} md={3}>
 					<CardActionArea component="a" href="#">
-						<Card className={classes.card}>
+						<Card style={{ borderRadius: '25px' }} className={classes.card}>
 							<div>
 								<CardContent>
 									<Typography component="h2" variant="h5">
