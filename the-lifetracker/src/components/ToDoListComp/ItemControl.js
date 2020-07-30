@@ -143,7 +143,7 @@ class ItemControl extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		formVisibleOnPage: state.formVisibleOnPage
+		formVisibleOnPageToDo: state.formVisibleOnPageToDo
 	};
 };
 

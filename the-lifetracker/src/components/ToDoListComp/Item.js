@@ -80,8 +80,6 @@ function Item(props) {
 								</CardContent>
 								<Button onClick={() => props.whenItemClicked(props.id)}>View Details</Button>
 							</div>
-
-							<Hidden xsDown />
 						</Card>
 					</CardActionArea>
 				</Grid>
