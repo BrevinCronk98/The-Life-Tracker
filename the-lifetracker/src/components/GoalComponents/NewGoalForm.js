@@ -7,7 +7,7 @@ function NewGoalForm(props) {
 	const firestore = useFirestore();
 	function addItemtoFirestore(event) {
 		event.preventDefault();
-		props.onNewItemCreation();
+		props.onNewGoalCreation();
 		return firestore.collection('goals').add({
 			goalName: event.target.goalName.value,
 			goalNotes: event.target.goalNotes.value
