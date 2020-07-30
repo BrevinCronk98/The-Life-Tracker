@@ -6,7 +6,7 @@
 
 
 # Set Up
-### To Get this program up and runing, clone the repository at https://github.com/BrevinCronk98/The-Life-Tracker. Open up  your terminal and change directories into 'the-lifetracker'. Once there, run 'npm install' in the terminal to install all of the necassary dependencies. More NPM scripts are located further down in the README in 'Avilabel Scripts'
+### To Get this program up and runing, clone the repository at https://github.com/BrevinCronk98/The-Life-Tracker. Open up  your terminal and change directories into 'the-lifetracker'. Once there, run 'npm install' in the terminal to install all of the necassary dependencies. More NPM scripts are located further down in the README in 'Available Scripts'
 
 
 # Description
