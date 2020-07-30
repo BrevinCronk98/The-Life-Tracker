@@ -92,6 +92,7 @@ class ItemControl extends React.Component {
 			currentlyVisibleState = <EditItemForm item={this.state.selectedItem} />;
 			buttonFunc = this.handleEditingItemInList;
 		} else if (this.state.selectedItem != null) {
+			buttonText = 'Update Ticket';
 			currentlyVisibleState = (
 				<ItemDetails
 					item={this.state.selectedItem}
