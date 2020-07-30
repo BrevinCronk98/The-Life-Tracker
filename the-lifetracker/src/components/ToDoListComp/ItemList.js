@@ -50,7 +50,7 @@ function ItemList(props) {
 				<br />
 				<center>
 					<Typography component="h4" variant="h5" align="center" color="textPrimary" gutterBottom>
-						You Have Nothing In Your List!!
+						Loading...
 					</Typography>
 				</center>
 			</React.Fragment>

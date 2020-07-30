@@ -58,7 +58,7 @@ function HomePage() {
 				<br />
 				<Grid item xs={12} md={3}>
 					<input
-						style={{ borderRadius: '15px' }}
+						style={{ borderRadius: '15px', marginBottom: '23%' }}
 						onClick={signUpSwitch}
 						type="image"
 						src={SignUp}
