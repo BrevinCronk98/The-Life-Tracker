@@ -81,9 +81,7 @@ function Item(props) {
 								<Button onClick={() => props.whenItemClicked(props.id)}>View Details</Button>
 							</div>
 
-							<Hidden xsDown>
-								<img id="img" src={img} width="45%" style={{ borderRadius: '15px' }} />
-							</Hidden>
+							<Hidden xsDown />
 						</Card>
 					</CardActionArea>
 				</Grid>

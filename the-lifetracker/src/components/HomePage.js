@@ -22,25 +22,17 @@ import PostImgThirteen from '../img/PostImgThirteen.jpg';
 import PostImgFourteen from '../img/PostImgTwelve.webp';
 import Hidden from '@material-ui/core/Hidden';
 
-const imgArray = [
-	PostImgOne,
-	PostImgTwo,
-	PostImgThree,
-	PostImgFour,
-	PostImgFive,
-	PostImgSix,
-	PostImgSeven,
-	PostImgEight,
-	PostImgNine,
-	PostImgTen,
-	PostImgEleven,
-	PostImgTwelve,
-	PostImgThirteen,
-	PostImgFourteen
-];
+const imgArrayOne = [ PostImgOne, PostImgTwo, PostImgThree, PostImgFour ];
+const imgArrayTwo = [ PostImgNine, PostImgTen, PostImgEleven ];
+const imgArrayThree = [ PostImgFive, PostImgSix, PostImgSeven, PostImgEight ];
 
-let num = Math.floor(Math.random() * imgArray.length);
-let img = imgArray[num];
+let numOne = Math.floor(Math.random() * imgArrayOne.length);
+let numTwo = Math.floor(Math.random() * imgArrayTwo.length);
+let numThree = Math.floor(Math.random() * imgArrayThree.length);
+
+let imgOne = imgArrayOne[numOne];
+let imgTwo = imgArrayTwo[numTwo];
+let imgThree = imgArrayThree[numThree];
 
 function HomePage() {
 	return (
@@ -59,14 +51,17 @@ function HomePage() {
 			<center>
 				<Grid item xs={12} md={3}>
 					<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+						<img id="img" src={imgOne} width="45%" style={{ borderRadius: '15px' }} />
 						Sign Up
 					</Button>
-					<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+					<Button id="pic" style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+						<img id="img" src={imgTwo} width="45%" style={{ borderRadius: '15px' }} />
 						To Do
 					</Button>
 				</Grid>
 				<br />
-				<Grid item xs={12} md={3}>
+				<Grid style={{ backgroundImage: imgThree }} item xs={12} md={3}>
+					<img id="img" src={imgThree} width="45%" style={{ borderRadius: '15px' }} />
 					<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
 						Goals
 					</Button>
