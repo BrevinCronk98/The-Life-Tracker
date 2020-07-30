@@ -60,6 +60,15 @@ class ItemControl extends React.Component {
 		});
 	};
 
+	handleDetailReturnClick = () => {
+		if (this.state.selectedItem != null) {
+			this.setState({
+				selectedItem: null,
+				editing: false
+			});
+		}
+	};
+
 	handleChangingSelectedItem = (id) => {
 		this.props.firestore.get({ collection: 'todolist', doc: id }).then((item) => {
 			const firestoreItem = {
@@ -95,7 +104,8 @@ class ItemControl extends React.Component {
 			);
 			buttonFunc = this.handleEditingItemInList;
 		} else if (this.state.selectedItem != null) {
-			buttonText = 'Update Ticket';
+			buttonText = 'Return to List';
+			buttonFunc = this.handleDetailReturnClick;
 			currentlyVisibleState = (
 				<ItemDetails
 					item={this.state.selectedItem}
