@@ -66,6 +66,13 @@ function HomePage() {
 						Goals
 					</Button>
 				</Grid>
+				<img
+					onClick={console.log('yuhh')}
+					id="img"
+					src={imgThree}
+					width="45%"
+					style={{ borderRadius: '15px' }}
+				/>
 			</center>
 		</React.Fragment>
 	);
