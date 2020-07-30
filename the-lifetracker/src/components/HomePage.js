@@ -34,6 +34,10 @@ let imgOne = imgArrayOne[numOne];
 let imgTwo = imgArrayTwo[numTwo];
 let imgThree = imgArrayThree[numThree];
 
+function yupp() {
+	window.open('/ToDo');
+}
+
 function HomePage() {
 	return (
 		<React.Fragment>
@@ -66,13 +70,7 @@ function HomePage() {
 						Goals
 					</Button>
 				</Grid>
-				<img
-					onClick={console.log('yuhh')}
-					id="img"
-					src={imgThree}
-					width="45%"
-					style={{ borderRadius: '15px' }}
-				/>
+				<input onClick={yupp} type="image" src={imgThree} class="btTxt submit" />
 			</center>
 		</React.Fragment>
 	);
