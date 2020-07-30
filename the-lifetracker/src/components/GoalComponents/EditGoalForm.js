@@ -7,18 +7,18 @@ function EditGoalForm(props) {
 
 	const { item } = props;
 
-	function handleEditItemFormSubmission(event) {
+	function handleEditGoalFormSubmission(event) {
 		event.preventDefault();
 		const propsToUpdate = {
 			goalName: event.target.goalName.value,
 			goalNotes: event.target.goalNotes.value
 		};
-		return firestore.update({ collection: 'todolist', doc: item.id }, propsToUpdate);
+		return firestore.update({ collection: 'goals', doc: item.id }, propsToUpdate);
 	}
 
 	return (
 		<React.Fragment>
-			<ReusableForm buttonText="Update To Do Item" />
+			<ReusableForm formSubmissionHandler={handleEditGoalFormSubmission} buttonText="Update To Do Item" />
 		</React.Fragment>
 	);
 }

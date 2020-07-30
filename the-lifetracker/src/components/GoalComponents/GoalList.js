@@ -28,7 +28,14 @@ function GoalList(props) {
 				</center>
 				<hr />
 				{goals.map((goal) => {
-					return <Goal goalName={goal.goalName} goalNotes={goal.goalNotes} id={goal.id} />;
+					return (
+						<Goal
+							WhenGoalClicked={props.onGoalSelection}
+							goalName={goal.goalName}
+							goalNotes={goal.goalNotes}
+							id={goal.id}
+						/>
+					);
 				})}
 			</React.Fragment>
 		);

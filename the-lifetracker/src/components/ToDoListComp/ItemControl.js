@@ -31,11 +31,6 @@ class ItemControl extends React.Component {
 		clearInterval(this.waitTimeUpdateTime);
 	}
 
-	handleDeletingItem = (id) => {
-		this.props.firestore.delete({ collection: 'todolist', doc: id });
-		this.setState({ selectedItem: null });
-	};
-
 	handleEditClick = () => {
 		this.setState({ editing: true });
 		console.log(this.state.editing);

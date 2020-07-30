@@ -70,7 +70,7 @@ function Goal(props) {
 								</CardContent>
 								<Button
 									style={{ backgroundColor: 'skyblue', color: 'white', marginBottom: '3%' }}
-									onClick={() => props.whenGoalClicked(props.id)}
+									onClick={() => props.WhenGoalClicked(props.id)}
 								>
 									View Details
 								</Button>

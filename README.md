@@ -4,6 +4,11 @@
 # Overview
 ## The Life Tracker is my Captstone project for Epicodus. In The Life Tracker, uses will be able to add and delete to multiple different types of lists to help manage the users life. Stretch goals for this project consist of allowing the user to use a MapAPI to find local businesses and restuarants nearby, as well as other user events if they are friends with that specific user. In the end, I want this app to be able to manage nearly all aspects of the users life.
 
+
+# Set Up
+### To Get this program up and runing, clone the repository at https://github.com/BrevinCronk98/The-Life-Tracker. Open up  your terminal and change directories into 'the-lifetracker'. Once there, run 'npm install' in the terminal to install all of the necassary dependencies. More NPM scripts are located further down in the README in 'Avilabel Scripts'
+
+
 # Description
 ## The Life Tracker will track and help manage your life and daily activites. You will be able to create grocery lists, to do lists, a goal checklists and more. I plan on implementing maps for the user to use, being able to locate events, resturaunts and businesses user the maps. I want to add someform of a friend data base where a user can add friens, and will then be able to message them, add them to events, and see what they share on their feed.
 
