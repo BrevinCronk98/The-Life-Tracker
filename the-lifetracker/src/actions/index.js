@@ -3,8 +3,12 @@ export const deleteItem = (id) => ({
 	id
 });
 
-export const toggleForm = () => ({
-	type: 'TOGGLE_FORM'
+export const toggleFormToDo = () => ({
+	type: 'TOGGLE_FORM_TODO'
+});
+
+export const toggleFormGoals = () => ({
+	type: 'TOGGLE_FORM_GOALS'
 });
 
 export const updateTime = (id, formattedWaitTime) => ({

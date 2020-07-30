@@ -26,7 +26,6 @@ function ItemList(props) {
 						</Typography>
 					</Container>
 				</center>
-
 				<hr />
 				{items.map((item) => {
 					return (

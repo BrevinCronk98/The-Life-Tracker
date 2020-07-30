@@ -11,15 +11,15 @@ import Goals from './../img/Goals.jpg';
 import SignUp from './../img/SignUp.png';
 
 function toDoSwitch() {
-	window.open('/ToDo');
+	window.location.href = '/ToDo';
 }
 
 function goalSwitch() {
-	window.open('/Goals');
+	window.location.href = '/Goals';
 }
 
 function signUpSwitch() {
-	window.open('/SignIn');
+	window.location.href = '/SignIn';
 }
 
 function HomePage() {

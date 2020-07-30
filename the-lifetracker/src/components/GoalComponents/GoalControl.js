@@ -35,20 +35,20 @@ class GoalControl extends React.Component {
 
 	handleFormClick = () => {
 		const { dispatch } = this.props;
-		const action = a.toggleForm();
+		const action = a.toggleFormGoals();
 		dispatch(action);
 	};
 
 	handleAddingGoal = (newGoal) => {
 		const { dispatch } = this.props;
-		const action = a.toggleForm();
+		const action = a.toggleFormGoals();
 		dispatch(action);
 	};
 	render() {
 		let currentlyVisibleState = null;
 		let buttonText = null;
 		let buttonFunc = null;
-		if (this.props.formVisibleOnPage) {
+		if (this.props.formVisibleOnPageGoals) {
 			currentlyVisibleState = <NewGoalForm onNewGoalCreation={this.handleAddingGoal} />;
 			buttonText = 'Click Here To See the Rest of Your Goals';
 			buttonFunc = this.handleFormClick;
@@ -74,14 +74,12 @@ class GoalControl extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		formVisibleOnPage: state.formVisibleOnPage,
-		isGoal: state.isGoal
+		formVisibleOnPageGoals: state.formVisibleOnPage
 	};
 };
 
 GoalControl.propTypes = {
-	formVisibleOnPage: PropTypes.bool,
-	isGoal: PropTypes.bool
+	formVisibleOnPageGoals: PropTypes.bool
 };
 
 GoalControl = connect(mapStateToProps)(GoalControl);

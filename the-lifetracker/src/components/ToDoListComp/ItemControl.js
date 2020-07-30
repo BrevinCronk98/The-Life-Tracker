@@ -43,13 +43,13 @@ class ItemControl extends React.Component {
 
 	handleFormClick = () => {
 		const { dispatch } = this.props;
-		const action = a.toggleForm();
+		const action = a.toggleFormToDo();
 		dispatch(action);
 	};
 
 	handleAddingNewItem = (newItem) => {
 		const { dispatch } = this.props;
-		const action = a.toggleForm();
+		const action = a.toggleFormToDo();
 		dispatch(action);
 	};
 
@@ -93,7 +93,7 @@ class ItemControl extends React.Component {
 		let currentlyVisibleState = null;
 		let buttonText = null;
 		let buttonFunc = null;
-		if (this.props.formVisibleOnPage) {
+		if (this.props.formVisibleOnPageToDo) {
 			currentlyVisibleState = <NewItemForm onNewItemCreate={this.handleAddingNewItem} />;
 			buttonText = 'Return To Your List';
 			buttonFunc = this.handleFormClick;
@@ -148,7 +148,7 @@ const mapStateToProps = (state) => {
 };
 
 ItemControl.propTypes = {
-	formVisibleOnPage: PropTypes.bool
+	formVisibleOnPageToDo: PropTypes.bool
 };
 
 ItemControl = connect(mapStateToProps)(ItemControl);
