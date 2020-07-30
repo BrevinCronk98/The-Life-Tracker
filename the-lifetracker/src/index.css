@@ -4,7 +4,7 @@ body {
 		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-image: url("./img/Background.jpg");
+	background-image: url("./img/NewBack.png");
 	background-repeat: repeat;
 	background-attachment: fixed;
 }
@@ -18,19 +18,15 @@ code {
 }
 
 #header {
-	background-image: url('./img/HeaderBack.jpg');
+	background-image: url('./img/PicHead.png');
 }
 
 #listHeader {
 	background-image: url('./img/headerpic.jpg');
 }
 
-#header-sub {
-	background-image: url('./img/Plexus.jpg');
-}
-
 #header-text {
-	color: white;
+	color: black;
 }
 
 #pic {

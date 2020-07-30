@@ -7,8 +7,9 @@ import { makeStyles } from '@material-ui/core';
 import rootReducer from '../reducers/index';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import Icon from '@material-ui/core/Icon';
+
 import Box from '@material-ui/core/Box';
+import firebase from 'firebase/app';
 
 const useStyles = makeStyles((theme) => ({
 	mainGrid: {
@@ -20,6 +21,18 @@ const useStyles = makeStyles((theme) => ({
 		}
 	}
 }));
+
+function doSignOut() {
+	firebase
+		.auth()
+		.signOut()
+		.then(function() {
+			console.log('Successfully signed out!');
+		})
+		.catch(function(error) {
+			console.log(error.message);
+		});
+}
 
 function Header() {
 	const classes = useStyles();
@@ -36,30 +49,42 @@ function Header() {
 							</Container>
 						</center>
 						<br />
-						<Container maxWidth="sm">
-							<Toolbar>
-								<Grid item xs={4}>
-									<Button margin="5%" id="todolist" href="#" color="primary" variant="contained">
+
+						<Container maxWidth="md">
+							<Toolbar style={{ marginLeft: '10%' }}>
+								<Grid container spacing={5}>
+									<Button id="todolist" href="#" color="primary" variant="contained">
 										<Link style={{ textDecoration: 'none', color: 'white' }} to="/ToDo">
 											To Do List
 										</Link>
 									</Button>
 								</Grid>
-								<Grid className={classes.mainGrid} item xs={4}>
+								<Grid container spacing={5}>
+									<Button
+										onClick={doSignOut}
+										id="todolist"
+										href="#"
+										color="primary"
+										variant="contained"
+									>
+										Sign Out
+									</Button>
+								</Grid>
+								<Grid container spacing={5}>
 									<Button id="signin" href="#" color="primary" variant="contained">
 										<Link style={{ textDecoration: 'none', color: 'white' }} to="/SignIn">
 											Login
 										</Link>
 									</Button>
 								</Grid>
-								<Grid className={classes.mainGrid} item xs={4}>
+								<Grid container spacing={5}>
 									<Button id="signin" href="#" color="primary" variant="contained">
 										<Link style={{ textDecoration: 'none', color: 'white' }} to="/">
 											Home
 										</Link>
 									</Button>
 								</Grid>
-								<Grid className={classes.mainGrid} item xs={4}>
+								<Grid container spacing={5}>
 									<Button id="signin" href="#" color="primary" variant="contained">
 										<Link style={{ textDecoration: 'none', color: 'white' }} to="/Goals">
 											Goals

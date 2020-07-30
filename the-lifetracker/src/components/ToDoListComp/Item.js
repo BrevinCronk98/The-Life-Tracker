@@ -14,7 +14,6 @@ import PostImgSix from '../../img/PostImgFive.jpg';
 import PostImgSeven from '../../img/PostImgFour.jpg';
 import PostImgEight from '../../img/PostImgFourteen.jpg';
 import PostImgNine from '../../img/PostImgNine.jpg';
-import PostImgTen from '../../img/PostImgSeven.jpg';
 import PostImgEleven from '../../img/PostImgSix.jpg';
 import PostImgTwelve from '../../img/PostImgTen.jpg';
 import PostImgThirteen from '../../img/PostImgThirteen.jpg';
@@ -47,7 +46,6 @@ function Item(props) {
 		PostImgSeven,
 		PostImgEight,
 		PostImgNine,
-		PostImgTen,
 		PostImgEleven,
 		PostImgTwelve,
 		PostImgThirteen,

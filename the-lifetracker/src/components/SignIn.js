@@ -24,10 +24,26 @@ function Signin() {
 				console.log(error.message, 'help');
 			});
 	}
+
+	function doSignIn(event) {
+		event.preventDefault();
+		const email = event.target.signinEmail.value;
+		const password = event.target.signinPassword.value;
+		firebase
+			.auth()
+			.signInWithEmailAndPassword(email, password)
+			.then(function() {
+				console.log('Successfully signed in!');
+			})
+			.catch(function(error) {
+				console.log(error.message);
+			});
+	}
+
 	return (
 		<React.Fragment>
 			<Container maxWidth="xs">
-				<Typography variant="h2" style={{ textAlign: 'center', marginBottom: '5%' }}>
+				<Typography variant="h2" style={{ color: 'black', textAlign: 'center', marginBottom: '5%' }}>
 					Sign Up
 				</Typography>
 				<form onSubmit={doSignUp}>
@@ -59,19 +75,67 @@ function Signin() {
 							/>
 						</Grid>
 					</Grid>
+					<center>
+						<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
+							<Button
+								type="submit"
+								onSubmit={console.log('help')}
+								id="signup"
+								style={{ float: 'left' }}
+								color="primary"
+								variant="contained"
+							>
+								Sign Up
+							</Button>
+						</Grid>
+					</center>
+				</form>
+				<Typography variant="h2" style={{ color: 'black', textAlign: 'center', marginBottom: '5%' }}>
+					Existing User
+				</Typography>
+				<form onSubmit={doSignIn}>
+					<Grid container spacing={2}>
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="email"
+								variant="outlined"
+								required
+								fullWidth
+								id="email"
+								label="Enter Your Email"
+								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
+							/>
+						</Grid>
 
-					<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
-						<Button
-							type="submit"
-							onSubmit={console.log('help')}
-							style={{ backgroundPosition: 'center' }}
-							id="signin"
-							color="primary"
-							variant="contained"
-						>
-							Sign Up
-						</Button>
+						{/* Item Location */}
+						<Grid item xs={12} sm={6}>
+							<TextField
+								name="password"
+								variant="outlined"
+								required
+								fullWidth
+								id="password"
+								label="Enter a Password"
+								autoFocus
+								style={{ backgroundColor: 'lightblue' }}
+							/>
+						</Grid>
 					</Grid>
+					<center>
+						<Grid style={{ marginTop: '7%', backgroundPosition: 'center' }} item xs={4}>
+							<Button
+								type="submit"
+								onSubmit={console.log('help')}
+								style={{ float: 'left' }}
+								id="signin"
+								color="primary"
+								variant="contained"
+							>
+								Sign In
+							</Button>
+						</Grid>
+					</center>
 				</form>
 			</Container>
 		</React.Fragment>
