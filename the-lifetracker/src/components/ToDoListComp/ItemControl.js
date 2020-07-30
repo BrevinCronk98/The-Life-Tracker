@@ -88,8 +88,10 @@ class ItemControl extends React.Component {
 			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem} />;
 			buttonText = 'Return To Your List';
 			buttonFunc = this.handleFormClick;
-		} else if (this.editing) {
-			currentlyVisibleState = <EditItemForm item={this.state.selectedItem} />;
+		} else if (this.state.editing) {
+			currentlyVisibleState = (
+				<EditItemForm item={this.state.selectedItem} onEditTick={this.handleEditingItemInList} />
+			);
 			buttonFunc = this.handleEditingItemInList;
 		} else if (this.state.selectedItem != null) {
 			buttonText = 'Update Ticket';

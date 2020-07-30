@@ -9,6 +9,7 @@ function EditItemForm(props) {
 
 	function handleEditItemFormSubmission(event) {
 		event.preventDefault();
+		props.onEditTicket();
 		const propsToUpdate = {
 			itemName: event.target.itemName.value,
 			itemLocation: event.target.itemLocation.value,
@@ -21,7 +22,7 @@ function EditItemForm(props) {
 
 	return (
 		<React.Fragment>
-			<ReusableForm buttonText="Update To Do Item" />
+			<ReusableForm formSubmissionhandler={handleEditItemFormSubmission} buttonText="Update To Do Item" />
 		</React.Fragment>
 	);
 }

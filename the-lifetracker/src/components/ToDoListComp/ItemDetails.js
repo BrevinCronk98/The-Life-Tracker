@@ -17,6 +17,15 @@ function ItemDetail(props) {
 				<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
 					Delete
 				</Button>
+				<Button
+					onClick={props.onClickEdit}
+					style={{ marginBottom: '8%' }}
+					id="main-btn"
+					variant="contained"
+					color="primary"
+				>
+					Update
+				</Button>
 			</center>
 		</React.Fragment>
 	);
