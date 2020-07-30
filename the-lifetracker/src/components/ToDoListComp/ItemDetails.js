@@ -8,13 +8,19 @@ function ItemDetail(props) {
 	return (
 		<React.Fragment>
 			<center>
-				<h1>item Detail</h1>
+				<h1>To Do Item Detail</h1>
 				<h3>{item.itemName}</h3>
 				<h3>{item.itemLocation}</h3>
 				<h3>{item.itemDate}</h3>
 				<h3>{item.itemTime}</h3>
 				<h3>{item.itemNotes}</h3>
-				<Button style={{ marginBottom: '8%' }} id="main-btn" variant="contained" color="primary">
+				<Button
+					onClick={() => props.onClickDelete(item.id)}
+					style={{ marginBottom: '8%' }}
+					id="main-btn"
+					variant="contained"
+					color="primary"
+				>
 					Delete
 				</Button>
 				<Button
@@ -32,7 +38,9 @@ function ItemDetail(props) {
 }
 
 ItemDetail.propTypes = {
-	item: PropTypes.object
+	item: PropTypes.object,
+	onClickDelete: PropTypes.func,
+	onClickEdit: PropTypes.func
 };
 
 export default ItemDetail;

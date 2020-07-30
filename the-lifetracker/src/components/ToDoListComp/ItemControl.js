@@ -76,7 +76,7 @@ class ItemControl extends React.Component {
 	};
 
 	handleDeletingItem = (id) => {
-		this.props.firrestore.delete({ collection: 'todolist', doc: id });
+		this.props.firestore.delete({ collection: 'todolist', doc: id });
 		this.setState({ selectedItem: null });
 	};
 
@@ -85,7 +85,7 @@ class ItemControl extends React.Component {
 		let buttonText = null;
 		let buttonFunc = null;
 		if (this.props.formVisibleOnPage) {
-			currentlyVisibleState = <NewItemForm onNewItemCreation={this.handleAddingItem} />;
+			currentlyVisibleState = <NewItemForm onNewItemCreate={this.handleAddingNewItem} />;
 			buttonText = 'Return To Your List';
 			buttonFunc = this.handleFormClick;
 		} else if (this.state.editing) {
