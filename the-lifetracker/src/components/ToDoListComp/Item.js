@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, CardHeader } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -29,6 +29,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
 	card: {
 		display: 'flex'
+	},
+	media: {
+		height: 0,
+		paddingTop: '56.25%' // 16:9
 	}
 });
 
@@ -60,25 +64,34 @@ function Item(props) {
 				<Grid style={{ float: 'center', margin: '3%', borderRadius: '25px' }} item xs={12} md={3}>
 					<CardActionArea component="a" href="#">
 						<Card style={{ borderRadius: '25px' }} className={classes.card}>
+							<CardMedia>
+								<img src={img} width="100%" />
+							</CardMedia>
+							<CardHeader
+								title={props.itemName}
+								subheader={props.itemDate}
+								style={{ color: 'steelblue' }}
+							/>
+							<hr style={{ color: 'lightblue' }} />
 							<div>
 								<CardContent>
-									<Typography component="h2" variant="h5">
-										{props.itemName}
+									<Typography variant="h5" style={{ color: 'steelblue' }}>
+										Location: {props.itemLocation}
 									</Typography>
-									<Typography variant="subtitle1" color="textSecondary">
-										{props.itemLocation}
+
+									<Typography style={{ color: 'steelblue' }} variant="subtitle1" paragraph>
+										Time: {props.itemTime}
 									</Typography>
-									<Typography variant="subtitle1" paragraph>
-										{props.itemDate}
-									</Typography>
-									<Typography variant="subtitle1" paragraph>
-										{props.itemTime}
-									</Typography>
-									<Typography variant="subtitle1" paragraph>
-										{props.itemNotes}
+									<Typography style={{ color: 'steelblue' }} variant="subtitle1" paragraph>
+										Notes: {props.itemNotes}
 									</Typography>
 								</CardContent>
-								<Button onClick={() => props.whenItemClicked(props.id)}>View Details</Button>
+								<Button
+									style={{ backgroundColor: 'skyblue', color: 'white', marginBottom: '3%' }}
+									onClick={() => props.whenItemClicked(props.id)}
+								>
+									View Details
+								</Button>
 							</div>
 						</Card>
 					</CardActionArea>

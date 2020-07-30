@@ -20,7 +20,7 @@ function ItemList(props) {
 						<Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
 							The To Do List
 						</Typography>
-						<Typography variant="h5" align="center" color="textSecondary" component="p">
+						<Typography variant="h5" align="center" style={{ color: 'black' }} component="p">
 							This is where you can keep try of thing you need to do in your life! Thank you for using the
 							To Do List!.
 						</Typography>

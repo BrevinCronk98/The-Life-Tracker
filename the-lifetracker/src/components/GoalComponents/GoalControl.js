@@ -74,7 +74,7 @@ class GoalControl extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		formVisibleOnPageGoals: state.formVisibleOnPage
+		formVisibleOnPageGoals: state.formVisibleOnPageGoals
 	};
 };
 
