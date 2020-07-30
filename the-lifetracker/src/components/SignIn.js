@@ -16,7 +16,7 @@ function Signin() {
 		const password = event.target.password.value;
 		firebase
 			.auth()
-			.createUserWithEmailAndPassword(email, password)
+			.createUser(email, password)
 			.then(function() {
 				console.log('Successfully Signed Up');
 			})
