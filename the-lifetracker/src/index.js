@@ -7,11 +7,13 @@ import { createFirestoreInstance } from 'redux-firestore';
 import firebase from './firebase';
 import { Provider } from 'react-redux';
 import App from './components/App';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/index';
 import 'firebase/auth';
+import thunkMiddleware from 'redux-thunk';
+import middlewareLogger from './middleware/middleware-logger';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware, middlewareLogger))
 
 const rrfProps = {
 	firebase,

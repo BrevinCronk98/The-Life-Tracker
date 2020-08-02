@@ -1,25 +1,21 @@
 import React from 'react';
-import firebase from 'firebase/app';
-import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
 import { Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import ToDo from './../img/ToDoList.jpg';
 import Goals from './../img/Goals.jpg';
 import SignUp from './../img/SignUp.png';
 
 function toDoSwitch() {
-	window.location.href = '/ToDo';
+	window.location.assign('/ToDo');
 }
 
 function goalSwitch() {
-	window.location.href = '/Goals';
+	window.location.assign( '/Goals');
 }
 
 function signUpSwitch() {
-	window.location.href = '/SignIn';
+	window.location.assign('/SignIn');
 }
 
 function HomePage() {

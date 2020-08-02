@@ -5,7 +5,7 @@ import { useFirestore } from 'react-redux-firebase';
 function EditGoalForm(props) {
 	const firestore = useFirestore();
 
-	const { item } = props;
+	const { goal } = props;
 
 	function handleEditGoalFormSubmission(event) {
 		event.preventDefault();
@@ -13,12 +13,12 @@ function EditGoalForm(props) {
 			goalName: event.target.goalName.value,
 			goalNotes: event.target.goalNotes.value
 		};
-		return firestore.update({ collection: 'goals', doc: item.id }, propsToUpdate);
+		return firestore.update({ collection: 'goals', doc: goal.id }, propsToUpdate);
 	}
 
 	return (
 		<React.Fragment>
-			<ReusableForm formSubmissionHandler={handleEditGoalFormSubmission} buttonText="Update To Do Item" />
+			<ReusableForm goalFormSubmissionHandler={handleEditGoalFormSubmission} buttonText="Update To Do Item" />
 		</React.Fragment>
 	);
 }

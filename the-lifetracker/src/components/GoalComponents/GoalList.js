@@ -34,6 +34,7 @@ function GoalList(props) {
 							goalName={goal.goalName}
 							goalNotes={goal.goalNotes}
 							id={goal.id}
+							key={goal.id}
 						/>
 					);
 				})}

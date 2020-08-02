@@ -36,9 +36,9 @@ class GoalControl extends React.Component {
 		this.setState({ selectedGoal: null });
 	};
 
-	handleEditClick = () => {
+	handleEditGoalClick = () => {
 		this.setState({ editingGoal: true });
-		console.log('aSDGSadg' + this.state.editingGoal);
+		console.log(this.state.editingGoal);
 	};
 
 	handleEditingGoalInList = () => {
@@ -49,10 +49,10 @@ class GoalControl extends React.Component {
 	};
 
 	handleDetailReturnClick = () => {
-		if (this.state.selectedItem != null) {
+		if (this.state.selectedGoal != null) {
 			this.setState({
-				selectedItem: null,
-				editing: false
+				selectedGoal: null,
+				editingGoal: false
 			});
 		}
 	};
@@ -81,29 +81,29 @@ class GoalControl extends React.Component {
 		});
 	};
 	render() {
-		let currentlyVisibleState = null;
+		let currentlyVisibleState = null; 
 		let buttonText = null;
 		let buttonFunc = null;
 		if (this.props.formVisibleOnPageGoals) {
 			currentlyVisibleState = <NewGoalForm onNewGoalCreation={this.handleAddingGoal} />;
 			buttonText = 'Click Here To See the Rest of Your Goals';
 			buttonFunc = this.handleFormClick;
-		} else if (this.state.selectedGoal != null) {
-			buttonText = 'Return to List';
-			buttonFunc = this.handleDetailReturnClick;
-			currentlyVisibleState = (
-				<GoalDetails
-					goal={this.state.selectedGoal}
-					onClickDeleteGoal={this.handleDeletingGoal}
-					onClickEditGoal={this.handleEditClick}
-				/>
-			);
-		} else if (this.state.editingGoal) {
+		} else if (this.state.editingGoall) {
 			buttonText = 'Return Home';
+			buttonFunc = this.handleEditingGoalInList;
 			currentlyVisibleState = (
 				<EditGoalForm goal={this.state.selectedGoal} onEditGoal={this.handleEditingGoalInList} />
 			);
-			buttonFunc = this.handleEditingItemInList;
+		} else if (this.state.selectedGoal != null) {
+				buttonText = 'Return to List';
+				buttonFunc = this.handleDetailReturnClick;
+				currentlyVisibleState = (
+					<GoalDetails
+						goal={this.state.selectedGoal}
+						onClickDeleteGoal={this.handleDeletingGoal}
+						onClickEditGoal={this.handleEditGoalClick}
+					/>
+				);
 		} else {
 			currentlyVisibleState = (
 				<GoalList onGoalSelection={this.handleChangingSelectedGoal} goalList={this.props.masterGoalList} />

@@ -19,7 +19,7 @@ function ReusableForm(props) {
 			<br />
 			<Container component="main" maxWidth="xs">
 				<div id="form">
-					<form onSubmit={props.formSubmissionHandler}>
+					<form onSubmit={props.goalFormSubmissionHandler}>
 						{/* Goal Name */}
 						<Grid container spacing={2}>
 							<Grid item xs={12} sm={6}>
